@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../view/screens/home_screen.dart';
+import 'src/view/screens/home_screen.dart';
+
 
 class Application extends StatelessWidget {
   const Application({Key? key}) : super(key: key);
@@ -10,7 +11,13 @@ class Application extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.green,
+
+        ),
+        scaffoldBackgroundColor: Colors.green.shade100,
         primarySwatch: Colors.blue,
+        useMaterial3: false,
       ),
       home: const HomeScreen(),
     );
