@@ -6,13 +6,7 @@ import '../model/post_model.dart';
 class PostScreenController {
   final ApiClient _client;
 
-
-  factory PostScreenController(ApiClient client) {
-    return PostScreenController._(client);
-  }
-
-  PostScreenController._(this._client);
-
+  PostScreenController(this._client);
 
   final List<PostModel> _dataList = [];
 
@@ -24,8 +18,8 @@ class PostScreenController {
 
     print(data.runtimeType);
 
-    for (var i in data) {
-      _dataList.add(PostModel.fromJson(i));
+    for (var json in data) {
+      _dataList.add(PostModel.fromJson(json));
     }
 
     print(_dataList.runtimeType);

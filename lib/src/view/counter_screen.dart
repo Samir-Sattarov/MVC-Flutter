@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../contoller/counter_screen_controller.dart';
+import '../contoller/counter_screen_controller.dart';
 
 class CounterScreen extends StatefulWidget {
   const CounterScreen({Key? key}) : super(key: key);
@@ -11,11 +11,11 @@ class CounterScreen extends StatefulWidget {
 
 class _CounterScreenState extends State<CounterScreen> {
   final CounterScreenController homeController = CounterScreenController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-
         title: const Text('Counter'),
       ),
       body: Center(
@@ -28,7 +28,9 @@ class _CounterScreenState extends State<CounterScreen> {
                 FloatingActionButton(
                   heroTag: null,
                   onPressed: () {
-                    setState(homeController.decrementCounter);
+                    setState(() {
+                      homeController.decrementCounter();
+                    });
                   },
                   tooltip: 'Decrement',
                   child: const Icon(Icons.remove),

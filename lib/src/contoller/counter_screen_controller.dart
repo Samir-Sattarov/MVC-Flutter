@@ -8,6 +8,9 @@ class CounterScreenController {
   CounterScreenController._();
 
   int get counter => CounterModel.counter;
+
+
+
   void incrementCounter() {
     CounterModel.incrementCounter();
   }
